@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "cytomine-installer"
+version = "0.1.0"
+description = "A tool for generating docker-compose-based deployment configuration of Cytomine"
+authors = ["Romain Mormont <romain.mormont@cytomine.com>"]
+maintainers = ["Ba Thien Le <ba.le@uliege.be>"]
+license = "Apache 2.0"
+readme = "README.md"
+repository = "https://github.com/Cytomine-ULiege/Cytomine-installer"
+packages = [{include = "cytomine_installer"}]
+keywords = ["automation", "cytomine", "deployment", "docker", "docker-compose"]
+classifiers = ["Programming Language :: Python :: 3.12"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pyyaml = "6.0.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+codespell = "^2.3.0"
+coverage = "^7.6.4"
+isort = "^5.13.2"
+pylint = "^3.3.1"
+mypy = {extras = ["reports"], version = "^1.13.0"}
+pre-commit = "^4.0.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.3"
+
+[tool.poetry.scripts]
+ctmn = "cytomine_installer.scripts.ctmn:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
